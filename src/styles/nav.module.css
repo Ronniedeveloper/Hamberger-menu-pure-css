@@ -24,9 +24,11 @@
     list-style-type: none;
     gap: 24px;
 }
+.icons {
+    font-size: 1.2em;
+}
 .li {
-    padding: 2px 4px;
-    border-left: 6px solid #808080;
+    padding: 2px 8px;
     color: #dcdcdc;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
@@ -83,9 +85,11 @@
     #ul_container {
         position: absolute;
         top: 14%;
-        left: 0;
+        left: 30%;
     }
+    
     .li {
+        width: 100%;
         padding: 2px 8px;
         border-left: none;
     

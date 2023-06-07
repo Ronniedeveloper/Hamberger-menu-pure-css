@@ -1,8 +1,15 @@
+import React from "react";
+import { useState } from "react";
 import Link from "next/link";
 import style from "../src/styles/nav.module.css";
-import {FaMotorcycle, FaBars} from "react-icons/fa"
+import { FaMotorcycle, FaBars,} from "react-icons/fa"
 
 const Navbar = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+    const handleClick = () => {
+        setIsMenuOpen(!isMenuOpen)
+    }
     return (
         <header>
             <nav className={style.nav}>
@@ -10,7 +17,7 @@ const Navbar = () => {
                     <FaMotorcycle fontSize={58} color={"#54a2ad"}/>
                     <h2 className={style.h2}>Doondo</h2>
                 </div>
-                <div  id={style.ul_container}  className="nav-links">
+                { !isMenuOpen && <div  id={style.ul_container}  className="nav-links">
                     <ul className={style.ul}>
                         <li className={style.li}>
                             <Link className={style.a} href={''}>Home</Link>
@@ -28,10 +35,10 @@ const Navbar = () => {
                             <Link className={style.a} href={''}>Contact Us</Link>
                         </li>
                     </ul>
-                </div>
+                </div>}
                 <div className={style.btns}>
                     <button className={style.signup}>Sign up</button>
-                    <FaBars name="menu" className={style.bars} fontSize={25}/>
+                    <FaBars name="menu" className={style.bars} fontSize={25} onClick={handleClick}/>
                 </div>
             </nav>
         </header>
